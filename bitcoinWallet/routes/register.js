@@ -21,7 +21,7 @@ router.post('/', async function(req, res) {
     const saltRounds = 10;
     const hash = await bcrypt.hash(password, saltRounds);
     const network = "mainnet";
-    const algorism = 'node-x25x';
+    const algorism = 'x25x';
     const iterations = 1000;
     const createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
     const privateKey = new bitcore.PrivateKey(network);
