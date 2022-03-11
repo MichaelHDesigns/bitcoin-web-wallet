@@ -9,7 +9,7 @@
     "bcrypt": "^5.0.0",
     "bignumber.js": "^7.2.1",
     "bitcore-explorers": "^1.0.1",
-    "bitcore-lib": "^0.15.0",
+    "helpthehomeless-lib": "HTHcoin/helpthehomeless-lib",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
