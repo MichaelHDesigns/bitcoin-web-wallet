@@ -21,14 +21,14 @@ router.post('/', function(req, res) {
 
         connection.query(query,userId, function(err, rows) {
             if(!err){
-                const algorirhm = 'x25x'
+                const algorirhm = 'aes-256-cbc'
                 const salt = rows[0].user_name;
                 const password = rows[0].password;
                 const iterations = 1000;
 
                 //Decrypt private key with crypto and save it in the database
                 let privateKey = rows[0].private_key;
-                const decipher = crypto.createCipher(algorirhm, crypto.pbkdf2Sync(password, salt, iterations, 32, 'x25x'));
+                const decipher = crypto.createCipher(algorirhm, crypto.pbkdf2Sync(password, salt, iterations, 32, 'sha256'));
                 const result = decipher.update(privateKey, 'base64', 'utf8');
                 privateKey = result + decipher.final('utf8');
                 console.log(privateKey)
