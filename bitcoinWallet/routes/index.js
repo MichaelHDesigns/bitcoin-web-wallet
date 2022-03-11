@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../mysqlConnection');
-const bitcore = require('bitcore-lib'); 
+const bitcore = require('helpthehomeless-lib'); 
 const explorers = require('bitcore-explorers');
 const bigdecimal = require('bignumber.js');
 const crypto = require('crypto');
-const network = "testnet";
+const network = "mainnet";
 
 //Wallet main page processing
 router.get('/', function(req, res) {
@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
     //Display of address and total balance
     connection.query(query,userId, function(err, rows) {
       if (!err) {
-        const algorirhm = 'aes-256-cbc';
+        const algorirhm = 'node-x25x';
         const salt = rows[0].user_name;
         const password = rows[0].password;
         const iterations = 1000;
