@@ -6,7 +6,7 @@ const explorers = require('bitcore-explorers');
 const crypto = require('crypto');
 
 const Transaction = bitcore.Transaction;
-const network = "testnet";
+const network = "mainnet";
 const insight = new explorers.Insight(network);
 
 //Can not access the send page directly
